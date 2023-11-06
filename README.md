@@ -1,3 +1,3 @@
 # WEB-322
 
-https://fair-teal-salmon-boot.cyclic.app
+https://fine-jade-hermit-crab-sock.cyclic.app
