@@ -1,3 +1,3 @@
 # WEB-322
 
-https://tricky-bat-twill.cyclic.app/
+https://fair-teal-salmon-boot.cyclic.app
