@@ -8,7 +8,11 @@
 *
 * Name: ___Ilhyun Cho_____ Student ID: __116342221____ Date: _11/06/23_____
 *
+<<<<<<< HEAD
 *  Published URL: ______https://fair-teal-salmon-boot.cyclic.app/___________
+=======
+*  Published URL: _____https://fine-jade-hermit-crab-sock.cyclic.app___________
+>>>>>>> 2cf4981 (2023-11-08)
 *
 ********************************************************************************/
 
