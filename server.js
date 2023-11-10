@@ -8,11 +8,7 @@
 *
 * Name: ___Ilhyun Cho_____ Student ID: __116342221____ Date: _11/06/23_____
 *
-<<<<<<< HEAD
-*  Published URL: ______https://fair-teal-salmon-boot.cyclic.app/___________
-=======
 *  Published URL: _____https://fine-jade-hermit-crab-sock.cyclic.app___________
->>>>>>> 2cf4981 (2023-11-08)
 *
 ********************************************************************************/
 
@@ -81,11 +77,11 @@ app.get("/lego/sets/:setNum", (req, res) => {
         // Change this line to pass the correct variable name 'set'
         res.render("set", { set: set });
       } else {
-        res.status(404).send("Lego set not found for set number: " + setNum);
+        res.status(404).render("404", {message:"Lego set not found for set number: " + setNum});
       }
     })
     .catch((error) => {
-      res.status(404).send("Error: " + error);
+      res.status(404).render("404", { message: error});
     });
 });
 

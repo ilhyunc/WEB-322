@@ -31,12 +31,12 @@ function getSetByNum(setNum) {
 }
 
 function getSetsByTheme(theme) {
-  return new Promise((resolve) => {
-    const matchingSets = sets.filter((set) =>
-      set.theme.toLowerCase().includes(theme.toLowerCase())
-    );
-    resolve(matchingSets);
-  });
+  const filteredSets = sets.filter((set) => set.theme.toLowerCase().includes(theme.toLowerCase()));
+  if (filteredSets.length > 0) {
+      return Promise.resolve(filteredSets);
+  } else {
+      return Promise.reject("Unable to find requested sets.");
+  }
 }
 
 module.exports = { initialize, getAllSets, getSetByNum, getSetsByTheme };
