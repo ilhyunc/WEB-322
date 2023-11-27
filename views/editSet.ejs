@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Set - <%= set.name %></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+</head>
+<body>
+  <header>
+    <br>
+    <br>
+    <h1>Edit Set - <%= set.name %></h1>
+  </header>
+  
+  <%- include('partials/navbar', {page: '' }) %>
+
+  <main>
+    <form action="/lego/editSet/" method="post">
+      <div class="form-group">
+        <label for="setName">Set Name:</label>
+        <input type="text" id="setName" name="setName" value="<%= set.name %>" class="form-control" required style="width: 20em;">
+      </div>
+
+      <div class="form-group">
+        <label for="setYear">Year:</label>
+        <input type="text" id="setYear" name="setYear" value="<%= set.year %>" class="form-control" required style="width: 20em;">
+      </div>
+
+      <div class="form-group">
+        <label for="numParts">Number of Parts:</label>
+        <input type="text" id="numParts" name="numParts" value="<%= set.num_parts %>" class="form-control" required style="width: 20em;">
+      </div>
+
+      <div class="form-group">
+        <label for="themeSelect">Theme:</label>
+        <select id="themeSelect" name="themeSelect" class="form-control" required style="width: 20em;">
+          <% themes.forEach(theme => { %>
+            <option <%= (set.theme_id == theme.id) ? "selected" : "" %> value="<%= theme.id %>">
+              <%= theme.name %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="setNum">Set Number:</label>
+        <input type="text" id="setNum" name="setNum" value="<%= set.set_num %>" readonly class="form-control" required style="width: 20em;">
+      </div>
+
+      <button type="submit" class="btn btn-success">Update</button>
+      <a href="/lego/deleteSet/<%= set.set_num %>" class="btn btn-danger">Delete</a>
+    
+    </form>
+  </main>
+
+</body>
+</html>

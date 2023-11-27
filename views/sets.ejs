@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
 <body>
-    <%- include('partials/navbar', { page: '/lego/sets', theme: theme }) %>
+    <%- include('partials/navbar', { page: '/lego/sets'}) %>
     <br>
     <br>
     <br>
@@ -44,7 +44,7 @@
                     <tr>
                         <td><img src="<%= set.img_url %>" alt="<%= set.name %>" width="100" height="100"></td>
                         <td><h4><%= set.name %></h4></td>
-                        <td><a class="btn  mt-2 btn-xs" href="/lego/sets?theme=<%= set.theme %>"><%= set.theme %></a></td>
+                        <td><a class="btn  mt-2 btn-xs" href="/lego/sets?theme=<%= set.Theme.name %>"><%= set.Theme.name %></a></td>
                         <td><%= set.year %></td>
                         <td><%= set.num_parts %></td>
                         <td><a class="btn btn-primary" href="/lego/sets/<%= set.set_num %>">Details</a></td>
