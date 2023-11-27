@@ -1,12 +1,12 @@
 /********************************************************************************
-* WEB322 – Assignment 4
+*  WEB322 – Assignment 05
+* 
+*  I declare that this assignment is my own work in accordance with Seneca's
+*  Academic Integrity Policy:
+* 
+*  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
 *
-* I declare that this assignment is my own work in accordance with Seneca's
-* Academic Integrity Policy:
-*
-* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
-*
-* Name: ___Ilhyun Cho_____ Student ID: __116342221____ Date: _11/10/23_____
+* Name: ___Ilhyun Cho_____ Student ID: __116342221____ Date: _27/11/23_____
 *
 *  Published URL: _____https://breakable-bear-khakis.cyclic.app/___________
 *
@@ -14,12 +14,12 @@
 
 const express = require("express");
 const app = express();
-// const path = require("path");
+const path = require("path");
 const port = process.env.PORT || 8080;
 const legoSets = require("./modules/legoSets");
 
-const themeData = require('./data/themeData');
-const setData = require('./data/setData');
+// const themeData = require('./data/themeData');
+// const setData = require('./data/setData');
 
 
 app.set('view engine', 'ejs');
@@ -28,17 +28,7 @@ app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }));
 
-// legoSets.initialize()
-//   .then(() => {
-//     app.listen(port, () => {
-//       console.log(`Server is running on port ${port}`);
-//     });
-//   })
-//   .catch((error) => {
-//     console.error("Error initializing Lego data:", error);
-//   });
-
-legoSets.initialize(themeData, setData)
+legoSets.initialize()
   .then(() => {
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
