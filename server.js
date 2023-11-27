@@ -18,10 +18,6 @@ const app = express();
 const port = process.env.PORT || 8080;
 const legoSets = require("./modules/legoSets");
 
-const themeData = require('./data/themeData');
-const setData = require('./data/setData');
-
-
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 // app.set('views', path.join(__dirname, 'views'));
