@@ -67,15 +67,6 @@ function initialize() {
     return sequelize.sync()
         .then(async () => {
             console.log('Database synchronized successfully.');
-    
-            // try {
-            //     await Theme.bulkCreate(themeData);
-            //     await Set.bulkCreate(setData);
-            //     console.log('Data inserted successfully.');
-            // } catch (err) {
-            //     console.error('Error inserting data:', err);
-            //     throw err;
-            // }
         })
         .catch((err) => {
             console.error('Error synchronizing database:', err);

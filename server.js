@@ -14,12 +14,12 @@
 
 const express = require("express");
 const app = express();
-const path = require("path");
+// const path = require("path");
 const port = process.env.PORT || 8080;
 const legoSets = require("./modules/legoSets");
 
-// const themeData = require('./data/themeData');
-// const setData = require('./data/setData');
+const themeData = require('./data/themeData');
+const setData = require('./data/setData');
 
 
 app.set('view engine', 'ejs');
@@ -28,7 +28,17 @@ app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }));
 
-legoSets.initialize()
+// legoSets.initialize()
+//   .then(() => {
+//     app.listen(port, () => {
+//       console.log(`Server is running on port ${port}`);
+//     });
+//   })
+//   .catch((error) => {
+//     console.error("Error initializing Lego data:", error);
+//   });
+
+legoSets.initialize(themeData, setData)
   .then(() => {
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
