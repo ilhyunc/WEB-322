@@ -11,7 +11,7 @@
 *  Published URL: _____https://breakable-bear-khakis.cyclic.app/___________
 *
 ********************************************************************************/
-
+//2023-11-27 16:45
 const express = require("express");
 const app = express();
 // const path = require("path");
@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 //     console.error("Error initializing Lego data:", error);
 //   });
 
-legoSets.initialize(themeData, setData)
+legoSets.initialize()
   .then(() => {
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
