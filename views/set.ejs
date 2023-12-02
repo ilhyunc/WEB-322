@@ -48,8 +48,9 @@
             <p id="quote" class="text-sm" style="font-family: Impact; font-weight: lighter; text-transform: capitalize; color: gray;"></p>
             <p>- <i><span id="author"></span></i></p>
 
-            
+            <% if (session.user) { %>
             <a class="btn btn-primary btn-sm" href="/lego/editSet/<%= set.set_num %>">EDIT SET: <%= set.name %></a>
+            <% } %>
             <a class="btn btn-primary btn-sm" href="#" onclick="history.back(); return false;">RETURN</a>
         </div>
 

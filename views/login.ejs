@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/main.css" />
+<html data-theme="light"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <br><br><br>
+
+    <%- include('partials/navbar', {page: '/login' }) %>
+        <div class="container mx-auto">
+
+            <div class="hero bg-base-200 rounded-lg p-6">
+                <div class="hero-content text-center ">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Log in</h1>
+
+                        <p class="py-6">Please provide your credentials below</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br>
+
+            <form action="/login" method="post">
+                <!-- Name -->
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-semibold">Username:</label>
+                    <input type="text" id="userName" name="userName" placeholder="User Name" required class="w-full p-2 border rounded">
+                </div>
+    
+                <!-- Password -->
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-semibold">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required class="w-full p-2 border rounded">
+                </div>
+    
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded" value="Login">Login</button>
+                </div>
+                <% if (errorMessage) { %>                
+                    <div role="alert" class="alert alert-error">
+                        <span>><%= errorMessage %></span>
+                    </div>
+                <% } %>
+            </form>
+            <br>
+            
+        </div>
+
+
+</body>
+</html>
